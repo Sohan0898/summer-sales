@@ -41,7 +41,7 @@
             <h1 class="text-4xl font-semibold mt-4" >Kitchenware</h1>
             <div class="flex flex-col lg:flex-row gap-5 mt-10">
                 <!-- product card  -->
-                <div class="flex-1 grid grid-cols-3 gap-5">
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     <!-- card 1  -->
                     <div  class="card h-72 bg-base-100 shadow-xl">
                         <figure class="p-6">
@@ -106,8 +106,8 @@
                           <span class="label-text text-2xl font-medium ">Have coupon?</span>
                         </label>
                         <label class="input-group">
-                          <input type="text" placeholder="Coupon code" class="input input-bordered w-4/5" />
-                          <button class ="btn normal-case bg-[#E527B2] text-white  text-xl font-semibold ">Apply</button>
+                          <input type="text" id="couponCode" placeholder="Coupon code" class="input input-bordered w-4/5" />
+                          <button id="applyButton" class ="btn normal-case bg-[#E527B2] text-white  text-xl font-semibold " disabled onclick="applyCoupon()">Apply</button>
                         </label>
                       </div>
 
@@ -118,16 +118,16 @@
                           </ol></p>
                           <hr>
                           <p><ul class="font-medium text-2xl leading-10 text-[#1111117F]">
-                            <li><span class="text-black">Total price:</span> <span id="total-price">00</span> TK</li>
-                            <li><span class="text-black">Discount :</span> <span>00</span> TK</li>
-                            <li><span class="text-black">Total:</span> <span>00</span> TK</li>
+                            <li><span  class="text-black ">Total price:</span> <span id="total-price">00</span> TK</li>
+                            <li><span class="text-black">Discount :</span> <span id="discount-price">00</span> TK</li>
+                            <li><span class="text-black">Total:</span> <span id="total-after-discount">00</span> TK</li>
                           </ul></p>
                           <hr>
                           <!-- <div class="card-actions justify-center">
                             <button class="btn btn-secondary normal-case text-white bg-[#E527B2] px-12 text-xl font-semibold mt-2">Make Purchase</button>
                           </div> -->
                           <!-- Open the modal using ID.showModal() method -->
-                              <button class="btn btn-secondary normal-case text-white bg-[#E527B2] px-12 text-lg font-semibold mt-2" onclick="my_modal_1.showModal()">Make Purchase</button>
+                              <button id="purchaseButton" class="btn btn-secondary normal-case text-white bg-[#E527B2] px-12 text-lg font-semibold mt-2" onclick="my_modal_1.showModal()" disabled >Make Purchase</button>
                               <dialog id="my_modal_1" class="modal">
                                 <form method="dialog" class="modal-box">
                                    <div class="flex justify-center my-1 lg:my-3"> <img src="./images/congo.png" alt="" class="rounded-xl" /></div>
@@ -136,7 +136,7 @@
                                     
                                     <div class="modal-action flex justify-center">
                                     <!-- if there is a button in form, it will close the modal -->
-                                    <button class="btn btn-error normal-case border-none text-white px-5 text-xl font-semibold bg-[#E527B2]">Go Home</button>
+                                    <button onclick="goHome()" class="btn btn-error normal-case border-none text-white px-5 text-xl font-semibold bg-[#E527B2]" >Go Home</button>
                                     </div>
                                 </form>
                                 </dialog>
@@ -144,10 +144,10 @@
                       </div>
                 </div>
             </div>
-            <h1 class="text-4xl font-semibold -mt-40" >Sportswear</h1>
+            <h1 class="text-4xl font-semibold lg:-mt-24" >Sportswear</h1>
             <div class="flex flex-col lg:flex-row gap-5 mt-10">
                 <!-- product card  -->
-                <div class="flex-1 grid grid-cols-3 gap-5">
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     <!-- card 4  -->
                     <div  class="card h-72 bg-base-100 shadow-xl">
                         <figure class="p-6"><img onclick="handleClickCard(this)" class="bg-[#1111110D] px-12 py-6 rounded-xl" src="./images/prod4.png" alt="" /></figure>
